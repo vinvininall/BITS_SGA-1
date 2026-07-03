@@ -1,6 +1,7 @@
 BITS Graded Assignment (Modules 1–4)
 Name:
-Vinayak
+Vinayak Singal
+
 
 Contents
 Question 1 – Linux Environment Verification
