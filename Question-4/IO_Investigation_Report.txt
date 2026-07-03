@@ -1,1 +1,50 @@
 
+Question 4 - File Access and I/O Investigation
+
+Command: lsof sample.txt
+No open file found.
+Explanation: Checks whether the file is currently open.
+
+Command: ulimit -a
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 30977
+max locked memory           (kbytes, -l) 65536
+max memory size             (kbytes, -m) unlimited
+open files                          (-n) 10240
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 30977
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+Explanation: Displays system resource limits.
+
+Command: echo Hello > output.txt
+Hello
+Explanation: Redirects output to a file.
+
+Command: ls invalidfile 2> error.txt
+ls: cannot access 'invalidfile': No such file or directory
+Explanation: Redirects error messages to a file.
+
+Command: ls -l /proc/1367/fd
+total 0
+lrwx------ 1 vinayak vinayak 64 Jul  3 18:19 0 -> /dev/pts/0
+l-wx------ 1 vinayak vinayak 64 Jul  3 18:19 1 -> /home/vinayak/BITS-Graded-Assignment/Q4-IO-Investigation/IO_Investigation_Report.txt
+lrwx------ 1 vinayak vinayak 64 Jul  3 18:19 10 -> /dev/pts/0
+lrwx------ 1 vinayak vinayak 64 Jul  3 18:19 2 -> /dev/pts/0
+lr-x------ 1 vinayak vinayak 64 Jul  3 18:19 255 -> /home/vinayak/BITS-Graded-Assignment/Q4-IO-Investigation/run_q4.sh
+Explanation: Shows file descriptors of the current shell.
+
+Summary:
+- Output redirection uses >.
+- Error redirection uses 2>.
+- Linux manages open files using file descriptors.
+
+IO_Investigation_Report.txt created successfully.
