@@ -1,0 +1,36 @@
+Question 2 - Secure Project Workspace Setup
+
+Command: umask
+0022
+Explanation: Shows the default umask value.
+
+Command: ls -ld ProjectWorkspace/docs ProjectWorkspace/src ProjectWorkspace/logs
+drwxr-xr-x 2 vinayak vinayak 4096 Jul  3 17:53 ProjectWorkspace/docs
+drwxr-xr-x 2 vinayak vinayak 4096 Jul  3 17:53 ProjectWorkspace/logs
+drwxr-xr-x 2 vinayak vinayak 4096 Jul  3 17:53 ProjectWorkspace/src
+Explanation: Displays the default permissions of the folders.
+
+Command: chmod 750 docs
+Command: chmod 770 src
+Command: chmod 700 logs
+Explanation: Changed permissions for each folder.
+
+Command: ls -ld ProjectWorkspace/docs ProjectWorkspace/src ProjectWorkspace/logs
+drwxr-x--- 2 vinayak vinayak 4096 Jul  3 17:53 ProjectWorkspace/docs
+drwx------ 2 vinayak vinayak 4096 Jul  3 17:53 ProjectWorkspace/logs
+drwxrwx--- 2 vinayak vinayak 4096 Jul  3 17:53 ProjectWorkspace/src
+Explanation: Shows the updated permissions.
+
+Command: ls -l ProjectWorkspace
+total 12
+drwxr-x--- 2 vinayak vinayak 4096 Jul  3 17:53 docs
+drwx------ 2 vinayak vinayak 4096 Jul  3 17:53 logs
+drwxrwx--- 2 vinayak vinayak 4096 Jul  3 17:53 src
+Explanation: Displays ownership details.
+
+Permission Summary:
+- docs (750): Owner has full access, group can read.
+- src (770): Owner and group have full access.
+- logs (700): Only the owner can access.
+
+Project_Workspace_Report.txt created successfully.
