@@ -1,24 +1,43 @@
+Command: whoami
+vinayak
+Explanation: Shows my username.
 
-Question 1 - Linux Environment Verification
+Command: id
+uid=1000(vinayak) gid=1000(vinayak) groups=1000(vinayak),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users)
+Explanation: Displays my user ID and groups.
 
-Username:
-root
+Command: groups
+vinayak adm cdrom sudo dip plugdev users
+Explanation: Lists the groups I belong to.
 
-Groups:
-uid=0(root) gid=0(root) groups=0(root)
-root
-
-Current Shell:
+Command: echo $SHELL
 /bin/bash
+Explanation: Shows the shell I am using.
 
-Current Working Directory:
-/work
+Command: pwd
+/home/vinayak/BITS-Graded-Assignment/Q1-Environment-Verification
+Explanation: Displays the current working directory.
 
-Workspace Files:
-The workspace contained README.md and the five folders Question1, Question2, Question3, Question4, and Question5. The ls -la command displayed detailed permissions, ownership, size, and timestamps.
+Command: ls -la
+total 24
+drwxr-xr-x 3 vinayak vinayak 4096 Jul  3 17:40 .
+drwxr-xr-x 7 vinayak vinayak 4096 Jul  3 17:34 ..
+-rw-r--r-- 1 vinayak vinayak  596 Jul  3 17:40 Environment_Report.txt
+-rwxr-xr-x 1 vinayak vinayak  793 Jul  3 17:40 run_q1.sh
+-rw------- 1 vinayak vinayak    1 Jul  3 17:38 run_q1.sh.save
+drwxr-xr-x 2 vinayak vinayak 4096 Jul  3 17:34 screenshots
+Explanation: Lists files and folders.
 
-Network Connectivity:
-The ping command to google.com transmitted 4 packets and received 4 packets with 0% packet loss. This confirmed that network connectivity was working.
+Command: ping -c 4 google.com
+PING google.com (172.217.24.14) 56(84) bytes of data.
+64 bytes from lcmaaa-an-in-f14.1e100.net (172.217.24.14): icmp_seq=1 ttl=116 time=7.78 ms
+64 bytes from lcmaaa-an-in-f14.1e100.net (172.217.24.14): icmp_seq=2 ttl=116 time=7.65 ms
+64 bytes from lcmaaa-an-in-f14.1e100.net (172.217.24.14): icmp_seq=3 ttl=116 time=8.00 ms
+64 bytes from lcmaaa-an-in-f14.1e100.net (172.217.24.14): icmp_seq=4 ttl=116 time=7.44 ms
 
-Brief Observations:
-I verified the current Linux user using whoami, id, and groups. I checked the shell and working directory using echo "$SHELL" and pwd. I listed the workspace contents using ls -la and verified network connectivity using ping.
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3064ms
+rtt min/avg/max/mdev = 7.436/7.714/7.996/0.202 ms
+Explanation: Confirms internet connectivity.
+
+Report created successfully.
